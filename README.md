@@ -47,10 +47,12 @@ The values of this object are managed by FormManager and are available to the de
 
 Available methods:
 
-
 ##UpdateData
+
 ###Usage
+
 ###Description
+
 | UpdateData | UpdateData(fieldDataObject)  | asdfasdfasdf |
 | ToggleValidationNode | ToggleValidationNode(fieldName, validatorName, value)  | asdfasdfasdf |
 | SetFieldValidationStatus | SetFieldValidationStatus(fieldName, value, errorMessage)  | asdfasdfasdf |

@@ -49,42 +49,73 @@ The values of this object are managed by FormManager and are available to the de
 
 #### UpdateData
 
-##### Usage
-
-UpdateData(fieldDataObject)
-
 ##### Description
 
 sadfasdfasdfasdfasdfasdf
 
-#### ToggleValidationNode
-
 ##### Usage
 
-ToggleValidationNode(fieldName, validatorName, value)
+UpdateData(fieldDataObject)
+
+#### ToggleValidationNode
 
 ##### Description
 
 asdfasdfasdfasdfasdfasdf
 
-#### SetFieldValidationStatus(fieldName, value, errorMessage)
+##### Usage
 
-#### Usage
+ToggleValidationNode(fieldName, validatorName, value)
 
-SetFieldValidationStatus(fieldName, value, errorMessage)
+#### SetFieldValidationStatus
 
-#### Description
+##### Description
 
 asdfasdfasdfasdfasdf
 
+##### Usage
 
-| UpdateData | UpdateData(fieldDataObject)  | asdfasdfasdf |
-| ToggleValidationNode |   | asdfasdfasdf |
-| SetFieldValidationStatus |   | asdfasdfasdf |
-| SetToClean | SetToClean()  | asdfasdfasdf |
-| UpdateFormStatus | asdfasdf  | asdfasdfasdf |
-| ValidateField | asdfasdf  | asdfasdfasdf |
-| ValidateForm | asdfasdf  | asdfasdfasdf |
+SetFieldValidationStatus(fieldName, value, errorMessage)
+
+#### SetToClean
+
+##### Description
+
+asdfasdfasdfasdfasdf
+
+##### Usage
+
+SetToClean()
+
+#### UpdateFormStatus
+
+##### Description
+
+asdfasdfasdfasdfasdf
+
+##### Usage
+
+UpdateFormStatus()
+
+#### ValidateField
+
+##### Description
+
+asdfasdfasdfasdfasdf
+
+##### Usage
+
+ValidateField()
+
+#### ValidateForm
+
+##### Description
+
+asdfasdfasdfasdfasdf
+
+##### Usage
+
+ValidateForm()
 
 Here is a quick example for a change password form:
 

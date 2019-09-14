@@ -105,7 +105,7 @@ export default function FormManager (formValidationSchema = {}) {
 		}
 	};
 
-	this.toggleValidationNode = (fieldName, validator = undefined, value = undefined) => {
+	this.ToggleValidationNode = (fieldName, validator = undefined, value = undefined) => {
 		const fieldValidators = this.form.validator[fieldName];
 		if (fieldValidators) {
 			Object.keys(fieldValidators).forEach((v) => {

@@ -95,12 +95,12 @@
         },            
         methods: {
             onDataChange (data) {
-                this.fm.updateData(data);
+                this.fm.UpdateData(data);
                 this.customConfirmPasswordValidation();
             },
             customConfirmPasswordValidation () {
                 const isMatch = (this.formData.newPassword === this.formData.confirmPassword);                 
-                this.fm.setFieldValidationStatus("confirmPassword", isMatch, "New password and confirmation password do not match");
+                this.fm.SetFieldValidationStatus("confirmPassword", isMatch, "New password and confirmation password do not match");
             },
             initializeValues () {
                 this.$refs.password.initializeValue("");

@@ -47,14 +47,17 @@ The values of this object are managed by FormManager and are available to the de
 
 Available methods:
 
-| Method | Usage | Description |
-| ------ | ------ | ------ |
-| ToggleValidationNode | asdfasdf  | asdfasdfasdf |
-| GitHub | [plugins/github/README.md][PlGh] | asdfasdf |
-| Google Drive | [plugins/googledrive/README.md][PlGd] | asdfasdf |
-| OneDrive | [plugins/onedrive/README.md][PlOd] | asdfasdf |
-| Medium | [plugins/medium/README.md][PlMe] | asdfasdf |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] | asdfasdf |
+
+##UpdateData
+###Usage
+###Description
+| UpdateData | UpdateData(fieldDataObject)  | asdfasdfasdf |
+| ToggleValidationNode | ToggleValidationNode(fieldName, validatorName, value)  | asdfasdfasdf |
+| SetFieldValidationStatus | SetFieldValidationStatus(fieldName, value, errorMessage)  | asdfasdfasdf |
+| SetToClean | SetToClean()  | asdfasdfasdf |
+| UpdateFormStatus | asdfasdf  | asdfasdfasdf |
+| ValidateField | asdfasdf  | asdfasdfasdf |
+| ValidateForm | asdfasdf  | asdfasdfasdf |
 
 Here is a quick example for a change password form:
 

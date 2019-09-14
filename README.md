@@ -45,17 +45,42 @@ When FormManager is instantiated is generates an internation object with the fol
 
 The values of this object are managed by FormManager and are available to the developer to manage his/her application.
 
-Available methods:
+### Available methods:
 
-### UpdateData
+#### UpdateData
 
-### Usage
+##### Usage
 
-### Description
+UpdateData(fieldDataObject)
+
+##### Description
+
+sadfasdfasdfasdfasdfasdf
+
+#### ToggleValidationNode
+
+##### Usage
+
+ToggleValidationNode(fieldName, validatorName, value)
+
+##### Description
+
+asdfasdfasdfasdfasdfasdf
+
+#### SetFieldValidationStatus(fieldName, value, errorMessage)
+
+#### Usage
+
+SetFieldValidationStatus(fieldName, value, errorMessage)
+
+#### Description
+
+asdfasdfasdfasdfasdf
+
 
 | UpdateData | UpdateData(fieldDataObject)  | asdfasdfasdf |
-| ToggleValidationNode | ToggleValidationNode(fieldName, validatorName, value)  | asdfasdfasdf |
-| SetFieldValidationStatus | SetFieldValidationStatus(fieldName, value, errorMessage)  | asdfasdfasdf |
+| ToggleValidationNode |   | asdfasdfasdf |
+| SetFieldValidationStatus |   | asdfasdfasdf |
 | SetToClean | SetToClean()  | asdfasdfasdf |
 | UpdateFormStatus | asdfasdf  | asdfasdfasdf |
 | ValidateField | asdfasdf  | asdfasdfasdf |

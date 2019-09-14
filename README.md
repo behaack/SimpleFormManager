@@ -48,6 +48,7 @@ myTextbox.vue
             @input="onUpdate"
         />
     </template>
+    
     <script>
         export default {
             name: "my-textbox"

@@ -8,7 +8,7 @@ Here is a quick example for a change password form:
 
 Step 1: Wrap a textbox control so it can work with FormManager. We will use Vue Js in this example:
 
-myTextbox.vue
+MyTextbox.vue
 
     <template>
         <input
@@ -21,7 +21,7 @@ myTextbox.vue
 
     <script>
         export default {
-            name: "my-textbox"
+            name: "my-textbox",
             props: {
                 name: {
                     type: String,
@@ -44,7 +44,7 @@ myTextbox.vue
                     return (this.originalValue !== this.val);
                 }
             },
-            methods () {
+            methods: {
                 onUpdate(e) {
                     this.val = e......;
                     this.controlChanged();
@@ -76,7 +76,7 @@ myTextbox.vue
 
 Step 2: Create your form, again we will use Vue Js:
 
-change-password.vue
+ChangePassword.vue
 
     <template>
         <form>
@@ -107,7 +107,7 @@ change-password.vue
     </template>
 
     <script>
-        import MyTextbox from "./myTextbox";
+        import MyTextbox from "./MyTextbox";
         import FM from "FormManager";
 
         const fields = {
@@ -123,8 +123,8 @@ change-password.vue
 		            errorMessage: "New password is required"
                 },
                 minLength: {
-		            validator: minLength(8),
-                    errorMessage: "Password must be 10 characters in length and contain at least on special character"
+		            validator: minLength(10),
+                    errorMessage: "Password must be 10 characters in length"
                 }
             },
             confirmPassword: {

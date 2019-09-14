@@ -45,19 +45,24 @@ When FormManager is instantiated is generates an internation object with the fol
 
 The values of this object are managed by FormManager and are available to the developer to manage his/her application.
 
-### Available methods:
+## Available methods:
 
-#### UpdateData
+### UpdateData
 
 ##### Description
 
-sadfasdfasdfasdfasdfasdf
+Used to update form manager as the data in the form changes.
 
 ##### Usage
 
 UpdateData(fieldDataObject)
 
-#### ToggleValidationNode
+fieldsDataObject:
+    {
+        
+    }
+
+### ToggleValidationNode
 
 ##### Description
 
@@ -67,7 +72,7 @@ asdfasdfasdfasdfasdfasdf
 
 ToggleValidationNode(fieldName, validatorName, value)
 
-#### SetFieldValidationStatus
+### SetFieldValidationStatus
 
 ##### Description
 
@@ -77,7 +82,7 @@ asdfasdfasdfasdfasdf
 
 SetFieldValidationStatus(fieldName, value, errorMessage)
 
-#### SetToClean
+### SetToClean
 
 ##### Description
 
@@ -87,7 +92,7 @@ asdfasdfasdfasdfasdf
 
 SetToClean()
 
-#### UpdateFormStatus
+### UpdateFormStatus
 
 ##### Description
 
@@ -97,7 +102,7 @@ asdfasdfasdfasdfasdf
 
 UpdateFormStatus()
 
-#### ValidateField
+### ValidateField
 
 ##### Description
 
@@ -107,7 +112,7 @@ asdfasdfasdfasdfasdf
 
 ValidateField()
 
-#### ValidateForm
+### ValidateForm
 
 ##### Description
 
@@ -116,6 +121,8 @@ asdfasdfasdfasdfasdf
 ##### Usage
 
 ValidateForm()
+
+## Example
 
 Here is a quick example for a change password form:
 

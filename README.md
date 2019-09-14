@@ -4,6 +4,55 @@ FormManager is a javascript class you can use to manage your html forms.  It can
 
 A word of warning upfront though.  For this tool to work it will require you to wrap all of your UI components to they provide a standard, but simple interface for FormManager to work with.  If you have an application are creating a lot of forms this tool will save you a ton of work and make your forms extremely easy to manage. For applications with only a few forms, the effort to wrap your forms is likely not worth the effort so this tool is probably not appropriate for your project. 
 
+FormManager, when instantiated, requires a json object with the following format:
+
+        const fields = {
+   	        fieldname1: {
+                validator1: {
+                    validator: validatorFunction,
+                    errorMessage: "This is the error message when validator return false"
+                }
+            }
+        }
+
+When FormManager is instantiated is generates an internation object with the following format:
+
+    {
+        form": {
+            "isDirty": false,
+            "isValid": false,
+            "validator": {
+                "fieldname1": {
+                    "validator1": {
+                        "errorMessage": "This is the error message when validator return false",
+                        "isActive": true
+                    }
+                }
+            }
+        },
+        "fields": {
+            "fieldname1": {
+                "isDirty": false,
+                "touched": false,
+                "value": "",
+                "originalValue": "",
+                "isValid": false,
+                "errorMessage": "This is the error message when validator return false",
+                "name": "fieldname1"
+            },
+        }
+    }
+
+The values of this object are managed by FormManager and are available to the developer to manage his/her application.
+
+Available methods:
+
+```sh
+$ cd dillinger
+$ npm install -d
+$ node app
+```
+
 Here is a quick example for a change password form:
 
 Step 1: Wrap a textbox control so it can work with FormManager. We will use Vue Js in this example:

@@ -36,7 +36,7 @@
         >
             Submit Change
         </button>
-        <!-- <pre>{{ fm }}</pre> -->
+        <pre>{{ fm }}</pre>
     </form>
 </template>
 

@@ -40,6 +40,7 @@ Step 1: create an json object for your form:
 Step 2: Wrap a textbox control so it can work with FormManager. We will use Vue Js in this example:
 
 myTextbox.vue
+
     <template>
         <input
             :name="name"
@@ -48,7 +49,7 @@ myTextbox.vue
             @input="onUpdate"
         />
     </template>
-    
+
     <script>
         export default {
             name: "my-textbox"

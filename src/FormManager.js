@@ -7,7 +7,7 @@ export default function FormManager (formValidationSchema = {}) {
 		isDirty: false,
 		isValid: true,
 		validator: formValidationSchema,
-		validateValidator: () => {
+		ValidateValidator: () => {
 			const schema = this.form.validator;
 			fieldNameArray.forEach((fieldName) => {
 				const fieldValidators = schema[fieldName];
@@ -26,7 +26,7 @@ export default function FormManager (formValidationSchema = {}) {
 	this.form.validateValidator();
 	this.fields = initializeFields(fieldNameArray);
 
-	this.updateData = (data) => {
+	this.UpdateData = (data) => {
 		const fieldName = data.name;
 
 		this.fields[fieldName] = {
@@ -34,22 +34,22 @@ export default function FormManager (formValidationSchema = {}) {
 			...data
 		};
 
-		this.validateField(fieldName, true);
+		this.ValidateField(fieldName, true);
 	};
 
-	this.validateForm = (initialIfDataIsBlank = false) => {
+	this.ValidateForm = (initialIfDataIsBlank = false) => {
 		fieldNameArray.forEach((fieldName) => {
 			if (this.fields[fieldName].value === null && initialIfDataIsBlank) {
 				this.fields[fieldName].value = "";
 				this.fields[fieldName].originalValue = "";
 			}
-			this.validateField(fieldName, false);
+			this.ValidateField(fieldName, false);
 		});
 
-		this.updateFormStatus();
+		this.UpdateFormStatus();
 	};
 
-	this.updateFormStatus = () => {
+	this.UpdateFormStatus = () => {
 		let isValid = true;
 		let isDirty = false;
 		fieldNameArray.forEach((fieldName) => {
@@ -64,20 +64,20 @@ export default function FormManager (formValidationSchema = {}) {
 		this.form.isDirty = isDirty;
 	};
 
-	this.setFormValidator = (validatorSchema) => {
+	this.SetFormValidator = (validatorSchema) => {
 		this.form.validator = validatorSchema;
 	};
 
-	this.setFieldValidationStatus = (fieldName, value, errorMessage, overrideIfSame = false) => {
+	this.SetFieldValidationStatus = (fieldName, value, errorMessage, overrideIfSame = false) => {
 		const isSame = (this.fields[fieldName].isValid === value);
 		if ((!isSame || (isSame && overrideIfSame)) && this.fields[fieldName].isValid) {
 			this.fields[fieldName].isValid = value;
 			this.fields[fieldName].errorMessage = errorMessage;
-			this.updateFormStatus();
+			this.UpdateFormStatus();
 		}
 	};
 
-	this.validateField = (fieldName, updateFormStatus = true) => {
+	this.ValidateField = (fieldName, updateFormStatus = true) => {
 		const fieldValidators = this.form.validator[fieldName];
 		let isValid = true;
 		let errorMessage = "";
@@ -101,7 +101,7 @@ export default function FormManager (formValidationSchema = {}) {
 		this.fields[fieldName].errorMessage = errorMessage;
 
 		if (updateFormStatus) {
-			this.updateFormStatus();
+			this.UpdateFormStatus();
 		}
 	};
 
@@ -117,7 +117,7 @@ export default function FormManager (formValidationSchema = {}) {
 		//this.validateForm();
 	};
 
-	this.setToClean = () => {
+	this.SetToClean = () => {
 		fieldNameArray.forEach((fieldName) => {
 			this.fields[fieldName].isDirty = false;
 			this.fields[fieldName].touched = false;

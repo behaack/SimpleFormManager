@@ -1,22 +1,28 @@
 # FormManager
 
-FormManager is a javascript class you can use to manage your html forms.  It can be used with Angular, React, Vue or any other javascript library for framework. It is also built to be unopinionated about what UI components you use. Use it with plain old html controls or use it with any one of the dozens of UI components available to you.
+FormManager is a javascript class you can use to manage your html forms.  It can be used with Angular, React, Vue or any other javascript library for framework. It is also built to be unopinionated about what UI components you use. Use it with plain old html controls or use it with any one of the dozens of UI components available to you. 
 
-A word of warning upfront though.  For this tool to work it will require you to wrap all of your UI components to they provide a standard, but simple interface for FormManager to work with.  If you have an application are creating a lot of forms this tool will save you a ton of work and make your forms extremely easy to manage. For applications with only a few forms, the effort to wrap your forms is likely not worth the effort so this tool is probably not appropriate for your project. 
+FormManager does not takeover your forms and shroud your forms in obscurity so you do not understand what is happening to your data, FormManager is lightweight and simple and is easy to reason about.
+
+Howver, a word of warning. FormManager is most certainly not for every project. For this tool to work, it will require you to wrap all of your form UI components so they comply with FormManager's requirements: a standard, but simple interface.  If you are creating an application with a lot of forms, this tool will save you a ton of work and make your forms extremely easy to manage. For applications with only a few simple forms, the effort required by this tool likely not worth the effort, so is probably not appropriate for your project. 
 
 FormManager, when instantiated, requires a json object with the following format:
 
-        const fields = {
-   	        fieldname1: {
-                validator1: {
-                    validator: validatorFunction,
-                    errorMessage: "This is the error message when validator return false"
-                }
-            },
-            fieldsName2: {
-                etc...
+    const fields = {
+        fieldname1: {
+            validator1: {
+                validator: validatorFunction,
+                errorMessage: "This is the error message when validator return false"
             }
+        },
+        fieldsName2: {
+            etc...
         }
+    }
+
+FormManager is instantiated as follows:
+
+    fm = new FM(fields);
 
 When FormManager is instantiated is generates an internal object with the following format:
 

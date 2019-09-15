@@ -355,7 +355,7 @@ In the form we see the following:
 
         v-if="(!fm.fields.newPassword.isValid && fm.fields.newPassword.touched)
 
-    Or enable/disable the submit button:
+    And is used to enable/disable the submit button:
 
         :disabled="!(fm.form.isDirty && fm.form.isValid)"
 

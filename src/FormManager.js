@@ -23,7 +23,7 @@ export default function FormManager (formValidationSchema = {}) {
 		}
 	};
 
-	this.form.validateValidator();
+	this.form.ValidateValidator();
 	this.fields = initializeFields(fieldNameArray);
 
 	this.UpdateData = (data) => {

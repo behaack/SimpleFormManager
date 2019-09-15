@@ -42,7 +42,7 @@
 
 <script>
     import MyTextbox from "./components/MyTextbox";
-    import FM from "./formManager/FormManager"; //"FormManager";
+    import FM from "./formManager/FormManager";
 
     const fields = {
         password: {

@@ -12,10 +12,13 @@ FormManager, when instantiated, requires a json object with the following format
                     validator: validatorFunction,
                     errorMessage: "This is the error message when validator return false"
                 }
+            },
+            fieldsName2: {
+                etc...
             }
         }
 
-When FormManager is instantiated is generates an internation object with the following format:
+When FormManager is instantiated is generates an internal object with the following format:
 
     {
         form": {
@@ -67,67 +70,54 @@ fieldsDataObject:
         originalValue: [orginalinal value]        
     }
 
+This object will typically be generated and emitted by the ui object. The 'name' field in the object must match the name of the field provided to FormManager upon instantiation.
+
+When UpdateData is called, it updates the FormManager form object and validates revalidated the form.
+
 ### ToggleValidationNode
 
 ##### Description
 
-asdfasdfasdfasdfasdfasdf
+Frequently, validation rules change depending on the state of a form. FormManager can handle changinf validation rules. When you instantiate FormManager include all of the validation rules the form might encounter.  You can then toggle those rules on and off using ToggleValidationNode as the situation dictates. 
 
 ##### Usage
 
     ToggleValidationNode(fieldName, validatorName, value)
 
+Example: 
+ 
+    ToggleValidationNode("fieldName1", "validator1", false)
+
+This call turns off validator1 for field fieldName1.
+
 ### SetFieldValidationStatus
 
 ##### Description
 
-asdfasdfasdfasdfasdf
+SetFieldValidationStatus provides the ability to programmatically override the validation status of a field and set the error message. This method is typically used in situations where a rule involves multiple fields. A classic examples is a form requiring the user to change his/her password. Usually this involves entering a password in one field and then retyping the same password into a different field. A validation rules is created to confirm that the same value was typed into both fields. 
+
+SetFieldValidationStatus is designed for just such a situation.
 
 ##### Usage
 
     SetFieldValidationStatus(fieldName, value, errorMessage)
 
+Example:
+
+    SetFieldValidationStatus("fieldName1", false, "Passwords do not match")
+
+This call sets fieldName1 to invalid and sets the errorMessage to "Passwords do not match". The form's isValid status is also set to false, since one invalid field makes the form invalid.
+
 ### SetToClean
 
 ##### Description
 
-asdfasdfasdfasdfasdf
+This method resets the 'isDirty' and 'touched' status for each field in the form to false.  It also resets the originalValue of each field to the current value. Finally, it resets the forms value 'isDirty' to false.
 
 ##### Usage
 
     SetToClean()
 
-### UpdateFormStatus
-
-##### Description
-
-asdfasdfasdfasdfasdf
-
-##### Usage
-
-    UpdateFormStatus()
-
-### ValidateField
-
-##### Description
-
-asdfasdfasdfasdfasdf
-
-##### Usage
-
-    ValidateField()
-
-### ValidateForm
-
-##### Description
-
-asdfasdfasdfasdfasdf
-
-##### Usage
-
-    ValidateForm()
-
-## Example
 
 Here is a quick example for a change password form:
 

@@ -58,8 +58,13 @@ Used to update form manager as the data in the form changes.
 UpdateData(fieldDataObject)
 
 fieldsDataObject:
+
     {
-        
+        name: [string: name of field],
+        touched: [boolean],
+        isDirty: [boolean],
+        value: [value],
+        originalValue: [orginalinal value]        
     }
 
 ### ToggleValidationNode
@@ -70,7 +75,7 @@ asdfasdfasdfasdfasdfasdf
 
 ##### Usage
 
-ToggleValidationNode(fieldName, validatorName, value)
+    ToggleValidationNode(fieldName, validatorName, value)
 
 ### SetFieldValidationStatus
 
@@ -80,7 +85,7 @@ asdfasdfasdfasdfasdf
 
 ##### Usage
 
-SetFieldValidationStatus(fieldName, value, errorMessage)
+    SetFieldValidationStatus(fieldName, value, errorMessage)
 
 ### SetToClean
 
@@ -90,7 +95,7 @@ asdfasdfasdfasdfasdf
 
 ##### Usage
 
-SetToClean()
+    SetToClean()
 
 ### UpdateFormStatus
 
@@ -100,7 +105,7 @@ asdfasdfasdfasdfasdf
 
 ##### Usage
 
-UpdateFormStatus()
+    UpdateFormStatus()
 
 ### ValidateField
 
@@ -110,7 +115,7 @@ asdfasdfasdfasdfasdf
 
 ##### Usage
 
-ValidateField()
+    ValidateField()
 
 ### ValidateForm
 
@@ -120,7 +125,7 @@ asdfasdfasdfasdfasdf
 
 ##### Usage
 
-ValidateForm()
+    ValidateForm()
 
 ## Example
 
@@ -191,8 +196,6 @@ MyTextbox.vue
             }
         }
     </script>
-
-
 
 Step 2: Create your form, again we will use Vue Js:
 
@@ -288,13 +291,3 @@ ChangePassword.vue
             }
         }
     </script>
-
-
-```sh
-$ cd dillinger
-$ npm install -d
-$ node app
-```
-
- - Write MORE Tests
- - Add Night Mode

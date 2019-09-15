@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 export default function FormManager (formValidationSchema = {}) {
 	var fieldNameArray = buildFieldNameArray(formValidationSchema);
 

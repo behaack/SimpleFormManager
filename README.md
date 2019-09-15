@@ -128,7 +128,7 @@ This method resets the 'isDirty' and 'touched' status for each field in the form
 
 Here is a quick example for a change password form. We will use Vue Js in this example:
 
-Step 1: Wrap a textbox control so it can work with FormManager. 
+#### Step 1: Wrap a textbox control so it can work with FormManager. 
 
 MyTextbox.vue
 
@@ -196,7 +196,7 @@ MyTextbox.vue
         }
     </script>
 
-Step 2: Create your form:
+#### Step 2: Create your form:
 
 ChangePassword.vue
 

@@ -264,9 +264,9 @@ ChangePassword.vue
             return (!!val);
         }
 
-        function minLength(max) {
+        function minLength(min) {
             return function (value) {
-                return value.length >= max;
+                return value.length >= min;
             }
         }
 
@@ -308,3 +308,55 @@ ChangePassword.vue
             }
         }
     </script>
+
+#### Explaination
+
+The key parts of this code are:
+
+The wrapped html <input /> control in step #1 implements the following methods:
+
+1) We tap into the input changes with @input="onUpdate". When the user makes changes to the control, onUpdate is invoked.
+
+2) onUpdate $emits the new value (for two way data binding), this is managed differently in react js.
+
+3) Then conteolChanges is called. controlChanged $emits an object that is consumed by the form via a call to DataForm's UpdateData method. 
+
+4) A method called initializeValue is created to initialize the values of the field in FormManager. Notice that initializeValue set the variables val and originalValue. it also calls controlChanged which emits the intial values for FormManager.
+
+In the form we see the following:
+
+1) A *fields* object is created for each field in the form. This json object is used to define the fields and validation rules. This is then used in the instantiation of the FieldManager object in the following line of code:
+    fm: new FM(fields)
+
+2) Each html control is created using the following pattern:
+
+    <MyTextbox
+        ref="password"
+        name="password"
+        v-model.trim="formData.password"
+        @dataChange="onDataChange"
+    />
+
+the ref is used to invoke the *intializeValue* method of the control. The *name* property *must* be the same as the field name inthe FormManager form object. The *dataChange* event property is used to feed data from the controller to FormManager.
+
+3) The *onDataChange* method makes one critical call: 
+
+    this.fm.UpdateData(data);
+
+*data* is the data package created by the *onControlChanges* method of our custom controller *myTextBox*.
+
+Calling *UpdateData* caused the FormManager to get updated with the new data.
+
+The call to *customConfirmPasswordValidation* is to implement a validation rule to make sure the new password is equal to the confirmation password. Note the call to *SetFieldValidationStatus*.
+
+4) *initializeValues* calls each control in the form. And via *onDataChange* each field in the FieldManager object is also intialized.
+   
+5) Note how FormManager is used to hide/show the error messages:
+
+    v-if="(!fm.fields.newPassword.isValid && fm.fields.newPassword.touched)
+
+Or enable/disable the submit button:
+
+    :disabled="!(fm.form.isDirty && fm.form.isValid)"
+
+

@@ -330,20 +330,20 @@ In the form we see the following:
 
 2) Each html control is created using the following pattern:
 
-    <MyTextbox
-        ref="password"
-        name="password"
-        v-model.trim="formData.password"
-        @dataChange="onDataChange"
-    />
+        <MyTextbox
+            ref="password"
+            name="password"
+            v-model.trim="formData.password"
+            @dataChange="onDataChange"
+        />
 
-the ref is used to invoke the *intializeValue* method of the control. The *name* property *must* be the same as the field name inthe FormManager form object. The *dataChange* event property is used to feed data from the controller to FormManager.
+    the ref is used to invoke the *intializeValue* method of the control. The *name* property *must* be the same as the field name inthe FormManager form object. The *dataChange* event property is used to feed data from the controller to FormManager.
 
 3) The *onDataChange* method makes one critical call: 
 
-    this.fm.UpdateData(data);
+        this.fm.UpdateData(data);
 
-*data* is the data package created by the *onControlChanges* method of our custom controller *myTextBox*.
+    *data* is the data package created by the *onControlChanges* method of our custom controller *myTextBox*.
 
 Calling *UpdateData* caused the FormManager to get updated with the new data.
 
@@ -353,9 +353,9 @@ The call to *customConfirmPasswordValidation* is to implement a validation rule 
    
 5) Note how FormManager is used to hide/show the error messages:
 
-    v-if="(!fm.fields.newPassword.isValid && fm.fields.newPassword.touched)
+        v-if="(!fm.fields.newPassword.isValid && fm.fields.newPassword.touched)
 
-Or enable/disable the submit button:
+    Or enable/disable the submit button:
 
     :disabled="!(fm.form.isDirty && fm.form.isValid)"
 

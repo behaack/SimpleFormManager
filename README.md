@@ -124,6 +124,7 @@ This method resets the 'isDirty' and 'touched' status for each field in the form
 
     SetToClean()
 
+## Example:
 
 Here is a quick example for a change password form:
 

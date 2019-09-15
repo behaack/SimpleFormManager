@@ -129,7 +129,8 @@ MyTextbox.vue
         <input
             :name="name"
             :value="value"
-            @blur="blur"
+            type="text"
+            @blur="onBlur"
             @input="onUpdate"
         />
     </template>
@@ -161,14 +162,15 @@ MyTextbox.vue
             },
             methods: {
                 onUpdate(e) {
-                    this.val = e......;
+                    this.val = e.target.value;
+                    this.$emit("input", this.val);
                     this.controlChanged();
                 },
                 onBlur () {
                     this.touched = true;
                     this.controlChanged();
                 },
-                onControlDataChanged () {
+                controlChanged () {
                     const controlData = {
                         name: this.name,
                         touched: this.touched,
@@ -181,7 +183,7 @@ MyTextbox.vue
                 initializeValue (value) {
                     this.val = value;
                     this.originalValue = value;
-                    this.onUpdate(value);
+                    this.controlChanged();
                 }
             }
         }
@@ -192,65 +194,81 @@ Step 2: Create your form, again we will use Vue Js:
 ChangePassword.vue
 
     <template>
-        <form>
-            <MyTextbox
-                ref="password"
-                :name="password"
-                v-model.trim="formData.password"
-                @dataChange="onDataChange"
-            />
+        <form @submit.prevent="onSubmit">
+            <div>
+                <MyTextbox
+                    ref="password"
+                    name="password"
+                    v-model.trim="formData.password"
+                    @dataChange="onDataChange"
+                />
+                <div v-if="(!fm.fields.password.isValid && fm.fields.password.touched)">{{ fm.fields.password.errorMessage }}</div>
+            </div>
 
-            <MyTextbox
-                ref="newPassword"
-                :name="newPassword"
-                v-model.trim="formData.newPassword"
-                @dataChange="onDataChange"
-            />
+            <div>
+                <MyTextbox
+                    ref="newPassword"
+                    name="newPassword"
+                    v-model.trim="formData.newPassword"
+                    @dataChange="onDataChange"
+                />
+                <div v-if="(!fm.fields.newPassword.isValid && fm.fields.newPassword.touched)">{{ fm.fields.newPassword.errorMessage }}</div>            
+            </div>
 
-            <MyTextbox
-                ref="confirmPassword"
-                :name="confirmPassword"
-                v-model.trim="formData.confirmPassword"
-                @dataChange="onDataChange"
-            />
+            <div>
+                <MyTextbox
+                    ref="confirmPassword"
+                    name="confirmPassword"
+                    v-model.trim="formData.confirmPassword"
+                    @dataChange="onDataChange"
+                />
+                <div v-if="(!fm.fields.confirmPassword.isValid && fm.fields.confirmPassword.touched)">{{ fm.fields.confirmPassword.errorMessage }}</div>            
+            </div>
 
-
+            <button 
+                type="submit"
+                :disabled="!(fm.form.isDirty && fm.form.isValid)"
+            >
+                Submit Change
+            </button>
+            <pre>{{ fm }}</pre>
         </form>
-
     </template>
 
     <script>
-        import MyTextbox from "./MyTextbox";
-        import FM from "FormManager";
+        import MyTextbox from "./components/MyTextbox";
+        import FM from "./formManager/FormManager"; //"FormManager";
 
         const fields = {
-   	        password: {
+            password: {
                 required: {
                     validator: required,
                     errorMessage: "Password is required"
                 }
             },
             newPassword: {
-   	            required: {
-		            validator: required,
-		            errorMessage: "New password is required"
-                },
                 minLength: {
-		            validator: minLength(10),
-                    errorMessage: "Password must be 10 characters in length"
+                    validator: minLength(10),
+                    errorMessage: "Password must be greater than 10 characters"
                 }
             },
             confirmPassword: {
                 required: {
                     validator: required,
-                    errorMessage: "error.auth.missingConfirmationPassword"
-                },
-                matchPassword: {
-                    validator: null,
-                    errorMessage: "Confirmation password must match password"
+                    errorMessage: "Confirmation password is required"
                 }
             }
-        }        
+        }
+        
+        function required(val) {
+            return (!!val);
+        }
+
+        function minLength(max) {
+            return function (value) {
+                return value.length >= max;
+            }
+        }
 
         export default {
             name: "change-password",
@@ -261,22 +279,31 @@ ChangePassword.vue
                 return {
                     fm: new FM(fields),
                     formData: {
-                        password,
-                        newPassword,
-                        confirmPassword
+                        password: "",
+                        newPassword: "",
+                        confirmPassword: ""
                     }
                 };
             },
             mounted () {
-                this.initializeValues();
+                this.initializeValues();            
             },            
-            methods () {
+            methods: {
                 onDataChange (data) {
+                    this.fm.UpdateData(data);
+                    this.customConfirmPasswordValidation();
+                },
+                customConfirmPasswordValidation () {
+                    const isMatch = (this.formData.newPassword === this.formData.confirmPassword);                 
+                    this.fm.SetFieldValidationStatus("confirmPassword", isMatch, "New password and confirmation password do not match");
                 },
                 initializeValues () {
                     this.$refs.password.initializeValue("");
                     this.$refs.newPassword.initializeValue("");
                     this.$refs.confirmPassword.initializeValue("");
+                },
+                onSubmit() {
+                    console.log(this.formData);
                 }
             }
         }

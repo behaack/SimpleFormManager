@@ -345,9 +345,9 @@ In the form we see the following:
 
     *data* is the data package created by the *onControlChanges* method of our custom controller *myTextBox*.
 
-Calling *UpdateData* caused the FormManager to get updated with the new data.
+    Calling *UpdateData* caused the FormManager to get updated with the new data.
 
-The call to *customConfirmPasswordValidation* is to implement a validation rule to make sure the new password is equal to the confirmation password. Note the call to *SetFieldValidationStatus*.
+    The call to *customConfirmPasswordValidation* is to implement a validation rule to make sure the new password is equal to the confirmation password. Note the call to *SetFieldValidationStatus*.
 
 4) *initializeValues* calls each control in the form. And via *onDataChange* each field in the FieldManager object is also intialized.
    
@@ -357,6 +357,6 @@ The call to *customConfirmPasswordValidation* is to implement a validation rule 
 
     Or enable/disable the submit button:
 
-    :disabled="!(fm.form.isDirty && fm.form.isValid)"
+        :disabled="!(fm.form.isDirty && fm.form.isValid)"
 
 

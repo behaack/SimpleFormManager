@@ -1,4 +1,5 @@
-import fm from "./src/FormManager";
+import fm from "./src/FormManager.js2";
+
 import {
 	alpha,
 	alphaNum,

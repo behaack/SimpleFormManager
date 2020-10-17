@@ -60,7 +60,7 @@ When FormManager is instantiated is generates an internal object with the follow
 
 The values of this object are managed by FormManager and are available to the developer to manage his/her application.
 
-Simple Form Manager comes bundled with Vuelidate validators. Though designed for use with Vue js, these validators will work with any project.  The list of validators can be found at the Vuelidate website: https://vuelidate.js.org/#sub-dynamic-parameters.
+Simple Form Manager comes bundled with Vuelidate validators. Though designed for use with Vue js, these validators will work with any project.  The list of validators can be found at the Vuelidate website.
 
 Use the validators as follows:
 ### Usage

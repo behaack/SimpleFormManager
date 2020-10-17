@@ -1,6 +1,6 @@
 {
   "name": "simple-form-manager",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Package for managing forms",
   "main": "index.js",
   "directories": {

@@ -24,7 +24,6 @@
     "manager"
   ],
   "dependencies": {
-    "lodash": "^4.17.20",
-    "simple-form-manager": "^0.9.1"
+    "lodash": "^4.17.20"
   }
 }

@@ -7,7 +7,7 @@ lodash@^4.17.20:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
-simple-form-manager@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/simple-form-manager/-/simple-form-manager-0.9.1.tgz#7912ab15f085d48bb5ee5b90e0f743cee5b5bb2b"
-  integrity sha512-UBjiW5fPTUHSbxAKulaKFIOD68rx1H/DZRIoFBRloS+HzWDMaMunZ/ghPdtB9FrX7CjukZnynx2u6thjFS6TWQ==
+vuelidate@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.7.5.tgz#ff48c75ae9d24ea24c24e9ea08065eda0a0cba0a"
+  integrity sha512-GAAG8QAFVp7BFeQlNaThpTbimq3+HypBPNwdkCkHZZeVaD5zmXXfhp357dcUJXHXTZjSln0PvP6wiwLZXkFTwg==

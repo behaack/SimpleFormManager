@@ -22,7 +22,7 @@ import {
 	decimal,
 	helpers,
 	date
-} from "./src/validators/index";
+} from "vuelidate/lib/validators";
 
 export {
 	fm,

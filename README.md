@@ -4,7 +4,13 @@ Simple Form Manager is a javascript class you can use to manage your html forms.
 
 Simple Form Manager does not takeover your forms and shroud your forms in obscurity so you do not understand what is happening to your data, FormManager is lightweight and simple and is easy to reason about.
 
-Howver, a word of warning. FormManager is most certainly not for every project. For this tool to work, it will require you to wrap all of your form UI components so they comply with FormManager's requirements: a standard, but simple interface.  If you are creating an application with a lot of forms, this tool will save you a ton of work and make your forms extremely easy to manage. For applications with only a few simple forms, the effort required by this tool likely not worth the effort, so is probably not appropriate for your project. 
+However, a word of warning. FormManager is most certainly not for every project. For this tool to work, it will require you to wrap all of your form UI components so they comply with FormManager's requirements: a standard, but simple interface.  If you are creating an application with a lot of forms, this tool will save you a ton of work and make your forms extremely easy to manage. For applications with only a few simple forms, the effort required by this tool likely not worth the effort, so is probably not appropriate for your project. 
+
+### Installation
+    npm install simple-form-manager
+
+### Usage
+    import { fm } from 'simple-form-manager'
 
 FormManager, when instantiated, requires a json object with the following format:
 
@@ -53,6 +59,24 @@ When FormManager is instantiated is generates an internal object with the follow
     }
 
 The values of this object are managed by FormManager and are available to the developer to manage his/her application.
+
+Simple Form Manager comes bundled with Vuelidate validators. Though designed for use with Vue js, these validators will work with any project.  The list of validators can be found at the Vuelidate website: https://vuelidate.js.org/#sub-dynamic-parameters.
+
+Use the validators as follows:
+### Usage
+    import { required } from 'simple-form-manager'  // required field validator
+
+    const fields = {
+        fieldname1: {
+            required: {
+                validator: required,
+                errorMessage: "This field is required"
+            }
+        },
+        fieldsName2: {
+            etc...
+        }
+    }
 
 ## Available methods:
 

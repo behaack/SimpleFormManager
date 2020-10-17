@@ -1,3 +1,2 @@
-export default (value) => {
-    return !!value;
-}
+import { withParams, req } from "./common";
+export default withParams({ type: "required" }, req);

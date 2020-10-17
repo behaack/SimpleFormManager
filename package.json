@@ -1,6 +1,6 @@
 {
-  "name": "formmanager",
-  "version": "0.1.0",
+  "name": "simple-form-manager",
+  "version": "0.9.0",
   "description": "Package for managing forms",
   "main": "index.js",
   "directories": {
@@ -13,10 +13,14 @@
     "type": "git",
     "url": "git+https://github.com/behaack/FormManager.git"
   },
-  "author": "",
+  "author": "Bill Haack",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/behaack/FormManager/issues"
   },
-  "homepage": "https://github.com/behaack/FormManager#readme"
+  "homepage": "https://github.com/behaack/FormManager#readme",
+  "keywords": [
+    "form",
+    "manager"
+  ]
 }

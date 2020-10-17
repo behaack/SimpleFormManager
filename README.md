@@ -1,8 +1,8 @@
-# FormManager
+# Simple Form Manager
 
-FormManager is a javascript class you can use to manage your html forms.  It can be used with Angular, React, Vue or any other javascript library for framework. It is also built to be unopinionated about what UI components you use. Use it with plain old html controls or use it with any one of the dozens of UI components available to you. 
+Simple Form Manager is a javascript class you can use to manage your html forms.  It can be used with Angular, React, Vue or any other javascript library for framework. It is also built to be unopinionated about what UI components you use. Use it with plain old html controls or use it with any one of the dozens of UI components available to you. 
 
-FormManager does not takeover your forms and shroud your forms in obscurity so you do not understand what is happening to your data, FormManager is lightweight and simple and is easy to reason about.
+Simple Form Manager does not takeover your forms and shroud your forms in obscurity so you do not understand what is happening to your data, FormManager is lightweight and simple and is easy to reason about.
 
 Howver, a word of warning. FormManager is most certainly not for every project. For this tool to work, it will require you to wrap all of your form UI components so they comply with FormManager's requirements: a standard, but simple interface.  If you are creating an application with a lot of forms, this tool will save you a ton of work and make your forms extremely easy to manage. For applications with only a few simple forms, the effort required by this tool likely not worth the effort, so is probably not appropriate for your project. 
 

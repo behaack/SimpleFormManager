@@ -1,6 +1,6 @@
 {
   "name": "simple-form-manager",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Package for managing forms",
   "main": "index.js",
   "directories": {
@@ -22,5 +22,9 @@
   "keywords": [
     "form",
     "manager"
-  ]
+  ],
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "simple-form-manager": "^0.9.1"
+  }
 }

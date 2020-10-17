@@ -1,4 +1,4 @@
-import fm from "./src/FormManager.js2";
+import fm from "./src/FormManager.js";
 
 import {
 	alpha,
